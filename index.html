@@ -43,7 +43,7 @@
       text-align: center;
       background: #3b82f6;
       color: white;
-      font-size: 20px;
+      font-size: 15px;
     }
 
     .hidden {
@@ -97,10 +97,13 @@
     <source src="https://actions.google.com/sounds/v1/alarms/alarm_clock.ogg">
   </audio>
   <script src="labatidora.js"></script>
-  <script src="inmersion.js"></script>
-  <script src="alsofa.js"></script>
-  <script src="elcaballito.js"></script>
-  <script>
+  <script src="inmersion/inmersion.js"></script>
+  <script src="inmersion/alsofa.js"></script>
+  <script src="inmersion/busitos.js"></script>
+  <script src="desplazamiento/elcaballito.js"></script>
+  <script src="desplazamiento/desplazamiento.js"></script>
+  <script src="desplazamiento/tabla.js"></script>
+    <script>
 
     const menu = document.getElementById("menu");
 
@@ -176,9 +179,12 @@
 
     ejercicios.innerHTML =
       labatidora()+
+      busitos()+
+      desplazamiento()+
       inmersion()+
-      alsofa()+
-      alcaballito();
+      alcaballito()+
+      tabla()+
+      alsofa();
   </script>
   <script>
     if ('serviceWorker' in navigator) {
