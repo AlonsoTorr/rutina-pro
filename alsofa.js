@@ -1,13 +1,12 @@
-function labatidora() {
+function alsofa() {
   return `
 <div class="card">
-      <button onclick="toggle(this)"> LA BATIDORA </button>
+      <button onclick="toggle(this)"> AL SOFÀ </button>
       <div class="content hidden">
-      Sentado en el borde de la piscina, con el culo lo más hacia el borde posible y las
-      manos por detrás de nosotros apoyadas en el suelo.   <br>
-      Realizar movimientos de pataleo en el agua con la punta del pie estirada y el tobillo relajado
+        Brazos extendidos y levantados hacia arriba.
+        Dejarse caer sentado al tiempo que levantamos los pies del suelo, doblando las rodillas hasta que toquemos el fondo
+    <br> Para ponerse de pie de nuevo, ponemos las plantas de pies en el suelo con las rodillas encogidas y haremos fuerza con los brazos hacia el suelo.
         <br><br>
-
         Min: <input type="number" value="1" min="1">
         <br><br>
         <button class="start" onclick="startTimer(this)">▶️ Iniciar</button>
