@@ -1,6 +1,6 @@
 function tabla() {
   return `
-<div class="card">
+<div class="cardo">
       <button onclick="toggle(this)"> FLOTACION VENTRAL CON TABLA </button>
       <div class="content hidden">
       Cuerpo totalmente relajado. Brazos extendidos. Levantar los pies intentando llevarlos a la superficie sin soltarser la tabla
@@ -28,9 +28,10 @@ function tabla() {
         <button class="start" onclick="startTimer(this)">▶️ Iniciar</button>
         <button class="pause" onclick="pauseTimer(this)">⏸ Pausar</button>
         <button class="reset" onclick="resetTimer(this)">🔄 Reiniciar</button>
-        
         <div class="timer-display">0:00</div>
       </div>
+      <button class="btn-eliminar" onclick="this.closest('.cardo').remove()">🗑️</button>
+    </div>
     </div>
     `;
 }

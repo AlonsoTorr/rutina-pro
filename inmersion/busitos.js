@@ -1,6 +1,6 @@
 function busitos() {
   return `
-<div class="card">
+<div class="cardo">
       <button onclick="toggle(this)"> BUSITOS </button>
       <div class="content hidden">
         Tomar Aire oxígeno por la boca y llenar los pulmones. 
@@ -14,6 +14,8 @@ function busitos() {
         
         <div class="timer-display">0:00</div>
       </div>
+      <button class="btn-eliminar" onclick="this.closest('.cardo').remove()">🗑️</button>
+    </div>
     </div>
     `;
 }

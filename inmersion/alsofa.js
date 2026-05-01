@@ -1,6 +1,6 @@
 function alsofa() {
   return `
-<div class="card">
+<div class="cardo">
       <button onclick="toggle(this)"> AL SOFÀ </button>
       <div class="content hidden">
         Brazos extendidos y levantados hacia arriba.
@@ -15,6 +15,8 @@ function alsofa() {
         
         <div class="timer-display">0:00</div>
       </div>
+      <button class="btn-eliminar" onclick="this.closest('.cardo').remove()">🗑️</button>
+    </div>
     </div>
     `;
 }

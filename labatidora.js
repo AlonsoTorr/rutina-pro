@@ -1,6 +1,6 @@
 function labatidora() {
   return `
-<div class="card">
+<div class="cardo">
       <button onclick="toggle(this)"> LA BATIDORA </button>
       <div class="content hidden">
       Sentado en el borde de la piscina, lo más hacia el borde posible y las
@@ -17,6 +17,8 @@ function labatidora() {
         
         <div class="timer-display">0:00</div>
       </div>
+      <button class="btn-eliminar" onclick="this.closest('.cardo').remove()">🗑️</button>
+    </div>
     </div>
     `;
 }

@@ -1,6 +1,6 @@
 function desplazamiento() {
   return `
-<div class="card">
+<div class="cardo">
       <button onclick="toggle(this)"> DESPLAZAMIENTO DESDE EL BORDE </button>
       <div class="content hidden">
         Coloca el "churro" en tu pecho y sujeto por los brazos.
@@ -13,7 +13,7 @@ function desplazamiento() {
 
         <button class="start" onclick="startTimer(this)">▶️ Iniciar</button>
         <button class="pause" onclick="pauseTimer(this)">⏸ Pausar</button>
-        <button class="reset" onclick="resetTimer(this)">🔄 Reiniciar</button>
+        <button class="reset" onclick="resetTimer(this)">🔄 Reiniciar</button>  
         
         <div class="timer-display">0:00</div>
       </div>
@@ -32,8 +32,9 @@ function desplazamiento() {
         <button class="start" onclick="startTimer(this)">▶️ Iniciar</button>
         <button class="pause" onclick="pauseTimer(this)">⏸ Pausar</button>
         <button class="reset" onclick="resetTimer(this)">🔄 Reiniciar</button>
-        
         <div class="timer-display">0:00</div>
+      </div>
+        <button class="btn-eliminar" onclick="this.closest('.cardo').remove()">🗑️</button>
       </div>
     </div>
     `;

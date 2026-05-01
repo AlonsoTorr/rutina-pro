@@ -1,6 +1,6 @@
 function inmersion() {
   return `
-<div class="card">
+<div class="cardo">
     <button onclick="toggle(this)"> INMERSION </button>
       <div class="content hidden">
       Sin soltarse del borde tomar aire por la boca <br>
@@ -33,6 +33,8 @@ function inmersion() {
         
         <div class="timer-display">0:00</div>
       </div>
+      <button class="btn-eliminar" onclick="this.closest('.cardo').remove()">🗑️</button>
+    </div>
     </div>
     `;
 }
