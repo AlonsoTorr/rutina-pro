@@ -34,9 +34,26 @@
       font-size: 25px;
     }
 
+     .cardo {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: center;
+      background: #1e293b;
+      padding: 15px;
+      border-radius: 15px;
+      margin-bottom: 10px;
+      text-align: center;
+      font-size: 25px;
+      align-items: center;
+    }
+
+    .cardo button {
+     width: auto;
+    }
+
     button {
       width: 50%;
-      padding: 12px;
+      padding: 20px;
       margin-top: 8px;
       border: none;
       border-radius: 10px;
@@ -81,6 +98,34 @@
       font-size: 40px;
       text-align: center;
     }
+
+    .grid-ejercicios {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 10px;
+    }
+    .grid-botones {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      }
+
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: center;
+    }
+    .top-bar button {
+      width: auto;
+    }
+      .btn-eliminar {
+        width: auto;
+        background: white;
+        color: black;
+        border-radius: 50px;
+        font-size: 50px; 
+        padding: 10px;
+      }
   </style>
 </head>
 
@@ -89,9 +134,29 @@
   <div id="menu" class="container">
     <div class="card"><button onclick="openDay('lunes')">📅 Lunes</button></div>
   </div>
-  <div id="lunes" class="container hidden"><button onclick="back()">⬅ Volver</button>
+  <div id="lunes" class="container hidden">
 
-    <div id="ejercicios"></div>
+    <div class="top-bar">
+       <button onclick="back()">⬅ Volver</button>
+       <button onclick="toggleColumnas()"id="btn-columnas">X1</button>
+    </div>
+
+    <h3>Ejercicios Disponibles</h3>
+
+  <div class="grid-botones">
+    <button onclick="agregarBatidora()">La Batidora</button>
+    <button onclick="agregarBusitos()">Busitos</button>
+    <button onclick="agregarCaballito()">El Caballito</button>
+    <button onclick="agregarTabla()">Tabla</button>
+    <button onclick="agregarDesplazamiento()">Desplazamiento</button>
+    <button onclick="agregarAlsofa()">Al sofa</button>
+    <button onclick="agregarInmersion()">Inmersión</button>
+  </div>
+
+    <h3>Mi rutina</h3>
+    <div id="mi-rutina" 
+      class="grid-ejercicios"></div>
+
   </div>
   <audio id="alarm">
     <source src="https://actions.google.com/sounds/v1/alarms/alarm_clock.ogg">
@@ -174,17 +239,45 @@
       display.innerText = "0:00";
     }
 
-    let ejercicios =
-    document.getElementById("ejercicios");
+    let columnas = 1;
+    
+    function toggleColumnas() {
+      columnas++;
 
-    ejercicios.innerHTML =
-      labatidora()+
-      busitos()+
-      desplazamiento()+
-      inmersion()+
-      alcaballito()+
-      tabla()+
-      alsofa();
+      if (columnas > 4) columnas = 1;
+
+      let cont=
+      document.getElementById("mi-rutina");
+      cont.style.gridTemplateColumns = `repeat(${columnas}, 1fr)`;
+
+      document.getElementById("btn-columnas").innerText = "X" + columnas;
+    }
+
+    function agregarBatidora() {
+      document.getElementById("mi-rutina").innerHTML += labatidora();
+    }
+    function agregarBusitos() {
+      document.getElementById("mi-rutina").innerHTML += busitos();
+    }
+    function agregarCaballito() {
+      document.getElementById("mi-rutina").innerHTML += alcaballito();
+    }
+    function agregarTabla() {
+      document.getElementById("mi-rutina").innerHTML += tabla();
+    }
+    function agregarDesplazamiento() {
+      document.getElementById("mi-rutina").innerHTML += desplazamiento();
+    }
+    function agregarAlsofa() {
+      document.getElementById("mi-rutina").innerHTML += alsofa();
+    }
+    function agregarInmersion() {
+      document.getElementById("mi-rutina").innerHTML += inmersion();
+    }
+    function CambiarColumnas(num) {
+      document.getElementById("mi-rutina").style.gridTemplateColumns = `repeat(${num}, 1fr)`;
+    }
+
   </script>
   <script>
     if ('serviceWorker' in navigator) {
