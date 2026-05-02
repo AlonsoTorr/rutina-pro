@@ -35,7 +35,6 @@
     }
 
      .cardo {
-      display: flex;
       justify-content: space-between;
       margin-bottom: 10px;
       background: #1e293b;
@@ -107,29 +106,40 @@
     .top-bar {
       display: flex;
       justify-content: space-between;
-      margin-bottom: center;
+      margin-bottom: 10px;
     }
+
     .top-bar button {
       width: auto;
     }
+
       .btn-eliminar {
+        background: #ffffff;
+        border: none;
+        border-radius: 50%;
         width: 40px;
         height: 40px;
-        background: white;
-        color: black;
-        border-radius: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 50px; 
+        font-size: 18px;
       }
+      
+      .header-ejercicio {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .activo {
+        background: #57615b;
+      }
+
+      
   </style>
 </head>
 
 <body>
   <header>🏊 Rutina PRO</header>
   <div id="menu" class="container">
-    <div class="card"><button onclick="openDay('lunes')">📅 Lunes</button></div>
+    <div class="card">
+        <button onclick="openDay('lunes')">📅 Lunes</button></div>
   </div>
   <div id="lunes" class="container hidden">
 
@@ -148,6 +158,11 @@
     <button onclick="agregarDesplazamiento()">Desplazamiento</button>
     <button onclick="agregarAlsofa()">Al sofa</button>
     <button onclick="agregarInmersion()">Inmersión</button>
+    <button onclick="agregarFlotacion()">Flotacion con apoyo</button>
+    <button onclick="agregarFlotacion2()">Flotacion con apoyo movil</button>
+    <button onclick="agregarFlotacion3()">Flotacion con deslizamiento</button>
+    <button onclick="agregarRespiracion()">Desplazamiento de la pelota</button>
+    <button onclick="agregarRespiracion2()">Soplar en el agua</button>
   </div>
 
     <h3>Mi rutina</h3>
@@ -165,6 +180,11 @@
   <script src="desplazamiento/elcaballito.js"></script>
   <script src="desplazamiento/desplazamiento.js"></script>
   <script src="desplazamiento/tabla.js"></script>
+  <script src="flotacion/flotacion.js"></script>
+  <script src="flotacion/flotacion2.js"></script>
+  <script src="flotacion/flotacion3.js"></script>
+  <script src="respiracion/respiracion.js"></script>
+  <script src="respiracion/respiracion2.js"></script>
     <script>
 
     const menu = document.getElementById("menu");
@@ -182,8 +202,18 @@
     }
 
     function toggle(btn) {
-      btn.nextElementSibling.classList.toggle("hidden");
+      let card = btn.closest(".cardo");
+      let content = card.querySelector(".content");
+      card.querySelectorAll('.header-ejercicio button').forEach(b => b.classList.remove('activo'));
+
+      if (!content.classList.contains("hidden")) {
+        content.classList.add("hidden");
+        return;
     }
+      content.classList.remove("hidden");
+      btn.classList.add('activo');
+    }
+
 
     function startTimer(btn) {
       let box = btn.parentElement;
@@ -249,6 +279,44 @@
 
       document.getElementById("btn-columnas").innerText = "X" + columnas;
     }
+    function mostrarContenido(btn, tipo) {
+      let card = btn.closest(".cardo");
+
+      let normal = card.querySelector(".normal");
+      let variante = card.querySelector(".variante");
+
+      let actual =tipo === 'normal' ? normal : variante;
+
+      if (!actual.classList.contains("hidden")) {
+        actual.classList.add("hidden");
+        return;
+      }
+
+      normal.classList.add("hidden");
+      variante.classList.add("hidden");
+
+      actual.classList.remove("hidden");
+    }
+    function mostrarContenido(btn, tipo) {
+      let card = btn.closest(".cardo");
+
+      let normal = card.querySelector(".normal");
+      let variante = card.querySelector(".variante");
+
+      let actual =tipo === 'normal' ? normal : variante;
+
+    card.querySelectorAll('.header-ejercicio button').forEach(b => b.classList.remove('activo'));
+      if (!actual.classList.contains("hidden")) {
+        actual.classList.add("hidden");
+        return;
+      }
+      normal.classList.add("hidden");
+      variante.classList.add("hidden");
+
+      actual.classList.remove("hidden");
+      btn.classList.add('activo');
+
+    }
 
     function agregarBatidora() {
       document.getElementById("mi-rutina").innerHTML += labatidora();
@@ -271,6 +339,22 @@
     function agregarInmersion() {
       document.getElementById("mi-rutina").innerHTML += inmersion();
     }
+    function agregarFlotacion() {
+      document.getElementById("mi-rutina").innerHTML += flotacion();
+    }
+    function agregarFlotacion2() {
+      document.getElementById("mi-rutina").innerHTML += flotacion2();
+    }
+    function agregarFlotacion3() {
+      document.getElementById("mi-rutina").innerHTML += flotacion3();
+    }
+    function agregarRespiracion() {
+      document.getElementById("mi-rutina").innerHTML += respiracion();
+    }
+    function agregarRespiracion2() {
+      document.getElementById("mi-rutina").innerHTML += respiracion2();
+    }
+
     function CambiarColumnas(num) {
       document.getElementById("mi-rutina").style.gridTemplateColumns = `repeat(${num}, 1fr)`;
     }
