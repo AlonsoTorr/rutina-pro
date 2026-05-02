@@ -1,7 +1,11 @@
 function alcaballito() {
 return `
 <div class="cardo">
-    <button onclick="toggle(this)"> EL CABALLITO </button>
+    <div class="header-ejercicio">
+      <button onclick="toggle(this)"> El Caballito </button>
+      <button class="btn-eliminar" onclick="this.closest('.cardo').remove()">🗑️</button>
+    </div>
+    
     <div class="content hidden">
         Introduce el "churro" entre tus piernas, procurando quedar en el centro de él. Adopta la posición de sentado
         lentamente mientras intentas mantener el equilibrio con tus manos y antebrazos.
@@ -17,8 +21,6 @@ return `
              <button class="reset" onclick="resetTimer(this)">🔄 Reiniciar</button>
         
              <div class="timer-display">0:00</div>
-      </div>
-        <button class="btn-eliminar" onclick="this.closest('.cardo').remove()">🗑️</button>
     </div>
     </div>
     `;

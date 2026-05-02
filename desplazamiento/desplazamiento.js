@@ -1,8 +1,13 @@
 function desplazamiento() {
   return `
 <div class="cardo">
-      <button onclick="toggle(this)"> DESPLAZAMIENTO DESDE EL BORDE </button>
-      <div class="content hidden">
+    <div class="header-ejercicio">  
+      <button onclick="mostrarContenido(this, 'normal')"> DESPLAZAMIENTO DESDE EL BORDE </button>
+      <button onclick="mostrarContenido(this, 'variante')" > VARIANTE </button>
+      <button class="btn-eliminar" onclick="this.closest('.cardo').remove()">🗑️</button>
+    </div>
+
+      <div class="content normal hidden">
         Coloca el "churro" en tu pecho y sujeto por los brazos.
 <br>    Agarrate al borde de la piscina e intenta mover los pies para que salpiquen en la superficie
 <br>    Sin parar los pies, date un pequeño impulso desde el borde para separarte de él.
@@ -18,8 +23,10 @@ function desplazamiento() {
         <div class="timer-display">0:00</div>
       </div>
 
-      <button onclick="toggle(this)"> VARIANTE </button>
-      <div class="content hidden">
+    
+    
+      <div class="content variante hidden">
+        Variante:
         Coloca el "churro" en tu pecho y sujeto por los brazos.
 <br>    Agarrate al borde de la piscina e intenta mover los pies para que salpiquen en la superficie
 <br>    Sin parar los pies, date un pequeño impulso desde el borde para separarte de él.
@@ -33,8 +40,6 @@ function desplazamiento() {
         <button class="pause" onclick="pauseTimer(this)">⏸ Pausar</button>
         <button class="reset" onclick="resetTimer(this)">🔄 Reiniciar</button>
         <div class="timer-display">0:00</div>
-      </div>
-        <button class="btn-eliminar" onclick="this.closest('.cardo').remove()">🗑️</button>
       </div>
     </div>
     `;
