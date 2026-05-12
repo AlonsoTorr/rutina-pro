@@ -131,6 +131,19 @@
         background: #57615b;
       }
 
+      .btnlarge {
+        justify-content: center;
+        gap: 70px;
+        flex-wrap: wrap;
+      }
+  
+      .btnlarge:not(.hidden) {
+        display: flex;
+        justify-content: center;
+        gap: 70px;
+        flex-wrap: wrap;
+    }
+ 
       
       
   </style>
@@ -153,8 +166,7 @@
 
   <div class="cardo">
      <button onclick="toggleSection('caca')">DESPLAZAMIENTO</button></div>
-  <div id="caca" class="container hidden">
-  
+  <div id="caca" class="container hidden btnlarge">
         <button onclick="agregarDesplazamiento()">Desplazamiento</button>
               <button onclick="agregarCaballito()">El Caballito</button>
                   <button onclick="agregarTabla()">Tabla</button>
@@ -162,7 +174,7 @@
 
   <div class="cardo">
          <button onclick="toggleSection('1')">FLOTACION</button></div>
-  <div id="1" class="container hidden">
+  <div id="1" class="container hidden btnlarge">
         <button onclick="agregarFlotacion()">Flotacion con apoyo</button>
            <button onclick="agregarFlotacion2()">Flotacion con apoyo movil</button>
              <button onclick="agregarFlotacion3()">Flotacion con deslizamiento</button>
@@ -170,7 +182,7 @@
 
   <div class="cardo">
         <button onclick="toggleSection('2')">INMERSION</button></div>
-    <div id="2" class="container hidden">
+    <div id="2" class="container hidden btnlarge">
         <button onclick="agregarInmersion()">Inmersion</button>
            <button onclick="agregarAlsofa()">Sofá</button>
              <button onclick="agregarBusitos()">Busitos</button>
@@ -178,7 +190,7 @@
 
   <div class="cardo">
         <button onclick="toggleSection('3')">RESPIRACION</button></div>
-    <div id="3" class="container hidden">
+    <div id="3" class="container hidden btnlarge">
         <button onclick="agregarRespiracion()">Dezplazar la Pelota</button>
            <button onclick="agregarRespiracion2()">Soplar en el Agua</button>
   </div>  
